@@ -1,0 +1,86 @@
+﻿<controls:WindowBase x:Class="艾梦小说更新提醒器.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:MyWindow"
+        Title="艾梦小说更新提醒器" Height="650" Width="800" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Icon="Images/clog.png" Closing="WindowBase_Closing" FocusableChanged="WindowBase_FocusableChanged" >
+    <Window.Resources>
+        <!--button样式-->
+        <Style x:Key="myBtnStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition x:Name="columnDefinition1" Width="0.982*"/>
+                                <ColumnDefinition x:Name="columnDefinition" Width="0.018*"/>
+                            </Grid.ColumnDefinitions>
+                            <Rectangle x:Name="rectangle" RadiusY="2" RadiusX="2" Stroke="{x:Null}" Fill="#FF6dcff6" Grid.ColumnSpan="2"/>
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Stroke" TargetName="rectangle" Value="{x:Null}"/>
+                                <Setter Property="Fill" TargetName="rectangle" Value="#ff00aeef"/>
+                            </Trigger>
+                            <Trigger Property="IsDefaulted" Value="True">
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FF00aeef"/>
+                                <Setter Property="Stroke" TargetName="rectangle" Value="{x:Null}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Stroke" TargetName="rectangle" Value="{x:Null}"/>
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FF00aeef"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Stroke" TargetName="rectangle" Value="{x:Null}"/>
+                                <Setter Property="Fill" TargetName="rectangle" Value="#FF6dcff6"/>
+                                <Setter Property="Width" TargetName="columnDefinition" Value="Auto"/>
+                                <Setter Property="MinWidth" TargetName="columnDefinition" Value="0"/>
+                                <Setter Property="Width" TargetName="columnDefinition1" Value="*"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Stroke" TargetName="rectangle" Value="{x:Null}"/>
+                                <Setter Property="Fill" TargetName="rectangle" Value="{x:Null}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--定义详细模板-->
+        <DataTemplate x:Key="bookMsgDetails">
+            <Border BorderBrush="#ccc" BorderThickness="0,0,0,1">
+                <Grid>
+                    <Ellipse x:Name="ellipseWithImageBrush"  Stroke="#FFcccccc" Tag="{Binding Id,Mode=TwoWay}"  HorizontalAlignment="Left" Height="110" Margin="44,18,0,0" VerticalAlignment="Top" Width="110">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{Binding ImgUrl,Mode=TwoWay}"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <!--<Image Source="{Binding ImgUrl}" HorizontalAlignment="Left" Height="142" Margin="44,18,0,0" VerticalAlignment="Top" Width="110"/>-->
+                    <Label Name="BookName" Content="{Binding Name,Mode=TwoWay}" Tag="{Binding Id,Mode=TwoWay}" MouseEnter="BookName_MouseEnter" MouseLeave="BookName_MouseLeave" MouseDown="BookName_MouseDown" HorizontalAlignment="Left" Width="330" Margin="206,40,0,77">
+                    </Label>
+                    <Label Name="lastChapter" Content="{Binding LastChapter,Mode=TwoWay}" Tag="{Binding Id,Mode=TwoWay}" MouseDown="lastChapter_MouseDown" MouseEnter="lastChapter_MouseEnter" MouseLeave="lastChapter_MouseLeave" HorizontalAlignment="Left" Width="330" Margin="206,80,0,29">
+                    </Label>
+                    <Label Name="IsRead" Content="{Binding IsRead,Mode=TwoWay}" Tag="{Binding Id,Mode=TwoWay}" Width="330" Margin="206,120,0,29" Foreground="#FFF10D0D" />
+                    <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap"  Tag="{Binding Id,Mode=TwoWay}" Width="104" Margin="602,122,0,29">
+                    <Hyperlink Name="HypeLinkMore" Click="HypeLinkMore" Tag="{Binding Name,Mode=TwoWay}">查看贴吧更新情况</Hyperlink>
+                    </TextBlock>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </Window.Resources>
+    <StackPanel HorizontalAlignment="Left" Width="800" Margin="0,0,0,0">
+        <Grid Height="80">
+            <Button x:Name="MoreDingyue" Content="更多订阅" Style="{DynamicResource myBtnStyle}" Margin="80,15,555,15" Click="MoreDingyue_Click" RenderTransformOrigin="0.485,0.9" />
+            <Label Content="筛选书籍：" HorizontalAlignment="Left" Margin="442,28,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.129,-0.253"/>
+            <ComboBox Name="CheckBook" SelectionChanged="CheckBook_SelectionChanged" HorizontalAlignment="Left" Margin="546,28,0,0" VerticalAlignment="Top" Width="120" BorderBrush="#FF04D3D3" Background="#FFFBFBFB"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Margin="0,0,0,0" Width="800" Height="435" VerticalAlignment="Top">
+            <ListBox x:Name="listBox" ItemTemplate="{StaticResource bookMsgDetails}" Width="800" Height="435" VerticalAlignment="Top"/>
+        </StackPanel>
+        <Grid Margin="0,0,0,0" Height="100">
+            <Button x:Name="TopPage" Content="上一页" Style="{DynamicResource myBtnStyle}" Margin="150,25,535,30" Click="TopPage_Click"/>
+            <Button x:Name="DownPage" Content="下一页" Style="{DynamicResource myBtnStyle}" Margin="535,25,150,30" Click="DownPage_Click"/>
+        </Grid>
+    </StackPanel>
+
+</controls:WindowBase>

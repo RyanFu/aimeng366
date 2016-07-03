@@ -1,0 +1,151 @@
+﻿@{
+    ViewBag.Title = "注册";
+    Layout = "~/Views/Shared/all.cshtml";
+}
+@section head
+{
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /*background: #444 url(http://sandbox.runjs.cn/uploads/rs/418/nkls38xx/carbon_fibre_big.png);*/
+            font-family: "宋体";
+        }
+
+        .loginBox {
+            width: 420px;
+            height: 320px;
+            padding: 0 20px;
+            border: 1px solid #fff;
+            color: #000;
+            margin-top: 40px;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 0 15px #222;
+            background: -moz-linear-gradient(top, #fff, #efefef 8%);
+            background: -webkit-gradient(linear, 0 0, 0 100%, from(#f6f6f6), to(#f4f4f4));
+            font: 11px/1.5em 'Microsoft YaHei';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -210px;
+            margin-top: -115px;
+        }
+
+            .loginBox h2 {
+                height: 45px;
+                font-size: 20px;
+                font-weight: normal;
+            }
+
+            .loginBox .left {
+                border-right: 1px solid #ccc;
+                height: 100%;
+                padding-right: 20px;
+            }
+
+        .regBtn {
+            margin-top: 21px;
+        }
+    </style>
+
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script>
+        $(function () {
+            $("#userRegister").validate({
+                rules: {
+                    username: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 20
+                    },
+                    password: {
+                        required: true,
+                        minlength: 6,
+                        maxlength: 20
+                    },
+                    repassword: {
+                        required: true,
+                        minlength: 6,
+                        maxlength: 20,
+                        equalTo: "#password"
+                    },
+                    verCode: {
+                        required: true,
+                        maxlength: 20,
+                    }
+                },
+                messages: {
+                    username: {
+                        required: "请输入帐号！",
+                        minlength: "请输入帐号！",
+                        maxlength: "帐号不能超过20位！"
+                    },
+                    password: {
+                        required: "请输入密码",
+                        minlength: "密码最少也要6位嘛，不然号给人盗了！",
+                        maxlength: "密码这么长您记得住么，最长20就够了！"
+                    },
+                    repassword: {
+                        required: "请输入确认密码",
+                        minlength: "确认密码最少也要6位嘛，不然号给人盗了！",
+                        maxlength: "确认密码这么长您记得住么，最长20就够了！",
+                        equalTo: "确认密码和密码不一致"
+                    },
+                    verCode: {
+                        required: "请输入验证码",
+                        maxlength: "验证码长度太长了",
+                    }
+                },
+                errorPlacement: function (error, element) {
+                    var id = $(element).attr("id");
+                    if ("verCode" == id) {
+                        $("#verCode").attr("placeholder", "验证码格式错误");
+                        return;
+                    }
+                    var infoobj = $("#" + id + "info");
+                    infoobj.html(error);
+                    infoobj.css("color", "red");
+                }
+            });
+        });
+    </script>
+}
+@section body
+{
+    <form id="userRegister" method="post" target="iMsg">
+        <div id="mybox" class="container" style="height:500px;">
+            <script>
+                $("#mybox").css("height", this.window.innerHeight);
+            </script>
+
+            <section class="loginBox row-fluid">
+                <section class="span7 left">
+                    <h2>用户注册</h2>
+                    <p><input id="username" type="text" name="username" placeholder="帐号 " /></p>
+                    <p><input id="password" type="password" name="password" placeholder="密码" /></p>
+                    <p><input id="repassword" type="password" name="repassword" placeholder="确认密码" /></p>
+                    <p><input id="verCode" type="text" name="verCode" placeholder="验证码" /></p>
+                    <section class="row-fluid">
+                        <section class="span1"><input type="submit" value=" 注册 " class="btn btn-primary"></section>
+                    </section>
+                </section>
+                <section class="span5 right">
+                    <h2></h2>
+                    <section>
+                        <p id="usernameinfo" style="height: 37px; ">一定要记住你的帐号哦</p>
+                        <p id="passwordinfo" style="height: 37px;line-height: 40px;">密码长度6到20位</p>
+                        <p id="repasswordinfo" style="height: 37px;line-height: 40px;">确认密码和密码一样</p>
+                        <p id="verCodeinfo" style="height: 37px;line-height: 40px;"><img style="cursor: pointer; vertical-align: middle" id="validateCode" onclick="this.src=this.src+'&1=1'" src="/home/GetVerCode?verName=@(BookD.Core.SessionName.BookDRegister)" alt="验证码" /></p>
+                    </section>
+                </section>
+            </section>
+        </div>
+    </form>
+    <iframe id="iMsg" name="iMsg" style="display:none;"></iframe>
+}

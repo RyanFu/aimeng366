@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "下载中心";
+    Layout = "~/Views/Shared/AllHasSearchBox.cshtml";
+}
+
+@section head
+{
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <style>
+        body {
+            background: #f8f8f8 url(assets/img/pattern.jpg);
+            font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: #555;
+            text-align: center;
+        }
+
+        #hiTitle {
+            display: inline-block;
+            margin-top: 60px;
+            padding-bottom: 10px;
+            font-size: 36px;
+            font-weight: 400;
+            color: #2d2d2d;
+            border-bottom: 1px dotted #aaa;
+        }
+
+        .aVideo {
+            display: inline-block;
+            margin-top: 30px;
+            -o-transition: all .2s;
+            -moz-transition: all .2s;
+            -webkit-transition: all .2s;
+            -ms-transition: all .2s;
+        }
+
+            .aVideo:hover {
+                opacity: 0.7;
+            }
+
+        .aimg {
+            width: 400px;
+            height: 200px;
+            padding: 7px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            -moz-box-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
+            -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,.15);
+        }
+
+        .ap {
+            display: block;
+            margin-top: 15px;
+        }
+
+        .bottom {
+            height: 60px;
+        }
+    </style>
+}
+@section body
+{
+    <div class="container">
+        <div class="row">
+            <div class="span10 offset1">
+                <h1 id="hiTitle">艾梦366小说更新提醒器</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span5 offset1">
+                <a class="aVideo" href="javascript:ShowMsg('提示','android版正在努力开发中！请下载电脑版！')"><img class="aimg" width="400" height="200" src="~/resource/images/aandroid.png" alt=""></a>
+                <a class="ap" href="javascript:ShowMsg('提示','android版正在努力开发中！请下载电脑版！')">android安卓版</a>
+            </div>
+            <div class="span5">
+                <a class="iphone aVideo" href="javascript:ShowMsg('提示','iphone版正在努力开发中！请下载电脑版！')"><img class="aimg" width="400" height="200" src="~/resource/images/aios.jpg" alt=""></a>
+                <a class="ap" href="javascript:ShowMsg('提示','iphone版正在努力开发中！请下载电脑版！')">iPhone苹果版</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span5 offset1">
+                <a class="ebook aVideo" href="http://pan.baidu.com/s/1sjQBJ21"><img class="aimg" width="400" height="200" src="~/resource/images/awindows.jpg" alt=""></a>
+                <a class="ap" href="http://pan.baidu.com/s/1sjQBJ21">电脑版</a>
+            </div>
+            <div class="span5">
+                <a class="coming-soon aVideo" href="javascript:ShowMsg('提示','window phone版正在努力开发中！请下载电脑版！')"><img class="aimg" width="400" height="200" src="~/resource/images/awindowsPhone.jpg" alt=""></a>
+                <a class="ap" href="javascript:ShowMsg('提示','window phone版正在努力开发中！请下载电脑版！')">windows phone</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom"></div>
+}

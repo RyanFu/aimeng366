@@ -1,0 +1,38 @@
+* {margin:0px; padding:0px; list-style: none;}
+.box {width:520px; height:280px; background:#fff; position: relative; overflow: hidden;z-index: 0;}
+.list {position:absolute; left:0; top:0;}
+.list li {width:520px; height:280px; cursor: pointer;}
+.num {position: absolute; right:10px; bottom:10px;}
+.num li {width:16px; height:16px; float:left; margin-right:2px; color:#fff; cursor: pointer; font-size: 12px; font-family:'Arial'; line-height:16px; text-align: center; border:1px solid #fff;}
+.active {background:#ff6600;}
+span {display: block; width:auto; text-align:center; color:red; font-size: 14px; font-family:'Arial';}
+
+.topClass{
+	width:100%;
+	height:35px;
+	border:1px solid #ededed;
+	background:#f5f5f5;
+	margin:0px auto;
+	font-size:12px;
+	}
+
+#divLeft{
+    width:300px;
+    height:35px;
+    float:left;
+    }
+#divLeft a{
+	line-height:35px;
+	}
+#divRight{
+    width:300px;
+    height:35px;
+    float:right;
+    }
+#divRight a{
+	line-height:35px;
+	}
+
+.actGotop{position:fixed; _position:absolute; bottom:100px; right:50px; width:150px; height:195px; display:none;}
+.actGotop a,.actGotop a:link{width:150px;height:195px;display:inline-block; background:url(../resource/images/huojian/gotop.png) no-repeat; _background:url(../resource/images/huojian/gotop.gif) no-repeat; outline:none;}
+.actGotop a:hover{width:150px; height:195px; background:url(../resource/images/huojian/gotopd.gif) no-repeat; outline:none;}

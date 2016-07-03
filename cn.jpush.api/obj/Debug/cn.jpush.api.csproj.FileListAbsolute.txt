@@ -1,0 +1,14 @@
+D:\项目资料\我的\jpush-api-csharp-client-develop\jpush-api-csharp-client-develop\src\cn.jpush.api\bin\Debug\cn.jpush.api.dll
+D:\项目资料\我的\jpush-api-csharp-client-develop\jpush-api-csharp-client-develop\src\cn.jpush.api\bin\Debug\cn.jpush.api.pdb
+D:\项目资料\我的\jpush-api-csharp-client-develop\jpush-api-csharp-client-develop\src\cn.jpush.api\obj\Debug\cn.jpush.api.dll
+D:\项目资料\我的\jpush-api-csharp-client-develop\jpush-api-csharp-client-develop\src\cn.jpush.api\obj\Debug\cn.jpush.api.pdb
+D:\项目资料\我的\example_src\cn.jpush.api\bin\Debug\cn.jpush.api.dll
+D:\项目资料\我的\example_src\cn.jpush.api\bin\Debug\cn.jpush.api.pdb
+D:\项目资料\我的\example_src\cn.jpush.api\obj\Debug\cn.jpush.api.dll
+D:\项目资料\我的\example_src\cn.jpush.api\obj\Debug\cn.jpush.api.pdb
+D:\项目资料\我的\JpushDemoV3\cn.jpush.api\bin\Debug\cn.jpush.api.dll
+D:\项目资料\我的\JpushDemoV3\cn.jpush.api\bin\Debug\cn.jpush.api.pdb
+D:\项目资料\我的\JpushDemoV3\cn.jpush.api\obj\Debug\cn.jpush.api.dll
+D:\项目资料\我的\JpushDemoV3\cn.jpush.api\obj\Debug\cn.jpush.api.pdb
+D:\项目资料\我的\JpushDemoV3\cn.jpush.api\bin\Debug\Newtonsoft.Json.dll
+D:\项目资料\我的\JpushDemoV3\cn.jpush.api\bin\Debug\Newtonsoft.Json.xml

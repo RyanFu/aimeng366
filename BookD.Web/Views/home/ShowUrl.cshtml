@@ -1,0 +1,19 @@
+﻿@model string
+@{
+    Layout = "~/Views/Shared/all.cshtml";
+    
+}
+@section head{
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+}
+@section body{
+    <iframe src="@ViewData["url"]" style="width:100%;border:0px;overflow:hidden;"></iframe>
+    <script>
+        $(function () {
+            var he = $(".navbar-fixed-top").css("height");
+            $("iframe").css("margin-top", he);
+            $("iframe").css("height", $(document).height() - parseInt(he));
+            $("body").css("overflow", "hidden");
+        })
+    </script>
+}

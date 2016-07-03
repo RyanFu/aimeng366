@@ -1,0 +1,210 @@
+﻿@{
+    Layout = "~/Views/Shared/all.cshtml";
+    ViewBag.Title = "艾梦366";
+}
+@section head{
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script>
+        var nowIndex = 0;
+        var canSearch = false;
+        var isLoad = false;
+        var nowSiteName = "@Db.EF.DbModel.ResourceFromSite.起点.ToString()";
+
+        $(function () {
+
+            var nowTemp = "@ViewData["siteType"].ToString()";
+
+            if (nowTemp != "") {
+                nowSiteName = nowTemp;
+                $("#siteTypeBtn").html(nowSiteName)
+            }
+
+            $("#seachBtn").mouseover(function () {
+                $(this).css("background", "#fff");
+            });
+
+            $("#seachBtn").mouseleave(function () {
+                $(this).css("background", "#F6F6F6");
+            });
+
+            $('#seachBtn').click(function () {
+                nowIndex = 0;
+                Search(nowIndex);
+            });
+            $("#searchValue").focus(function () {
+                canSearch = true;
+            });
+            $("#searchValue").blur(function () {
+                canSearch = false;
+            });
+            document.onkeydown = function (event) {
+                var e = event || window.event || arguments.callee.caller.arguments[0];
+                if (e && e.keyCode == 13) {
+                    if (canSearch) {
+                        nowIndex = 0;
+                        Search(nowIndex);
+                    }
+                }
+            };
+            Search(nowIndex);
+        });
+        function Search() {
+            var keys = $("#searchKey").children();
+            var _index = 0;
+            keys.each(function (index, o) {
+                if ($(o).is(":visible")) {
+                    _index = index;
+                }
+            });
+
+            loadStart("#pageContainer", 4)
+            $.ajax({
+                type: "post",
+                url: "/Search/SearchBook",
+                timeout: 20000,
+                data: { PageSize: 10, PageIndex: nowIndex, key: $("#searchValue").val(), type: $(keys[_index]).attr("value"), siteType: nowSiteName },
+                success: function (data) {
+                    if (data.length < 100) {
+                        if (nowIndex < 0) {
+                            nowIndex = -1
+                        }
+                    }
+                    isLoad = false;
+                    $("#pageContainer").html(data);
+                    $('html,body').animate({ scrollTop: '0px' }, 500);
+                },
+                complete: function (XMLHttpRequest, status) { //请求完成后最终执行参数
+                    if (status == 'timeout') {//超时,status还有success,error等值的情况
+                        ajaxTimeoutTest.abort();
+                        ShowMsg("提示", "请求超时！请刷新页面重试！");
+                    }
+                }
+            });
+        }
+
+
+
+        function searchKeyChange(obj) {
+            var keys = $("#searchKey").children();
+            var _index = 0;
+            keys.each(function (index, o) {
+                if ($(o).is(":visible")) {
+                    _index = index;
+                }
+                $(o).hide();
+            });
+            if (keys[_index + 1] == undefined) {
+                $(keys[0]).show();
+            } else {
+                $(keys[_index + 1]).show();
+            }
+        }
+
+        function changeNowSiteType(obj) {
+            var rst = $(obj).html();
+            nowSiteName = rst;
+            $("#siteTypeBtn").html(rst)
+        }
+
+        //上一页
+        function topPage() {
+            if (isLoad) {
+                return;
+            }
+            isLoad = true;
+            nowIndex--;
+            Search(nowIndex);
+        }
+        //下一页
+        function downPage() {
+            if (isLoad) {
+                return;
+            }
+            if ($("#pageContainer").html().length < 100 && nowIndex > 0) {
+                return;
+            }
+            isLoad = true;
+            nowIndex++;
+            Search(nowIndex);
+        }
+    </script>
+}
+
+@{
+    var siteTypes = Enum.GetNames(typeof(Db.EF.DbModel.ResourceFromSite));
+}
+@section body{
+
+    <header class="container-fluid">
+        <div id="logAndSeach" class="row-fluid" style="margin-top:130px">
+            <div class="span1"></div>
+            <a class="span2" href="/"><img id="log_img" src="~/resource/images/sys/log.png"></a>
+            <div class="span7" style="background:#E6e6e6;padding:3px;">
+                <ul id="searchKey" class="span2" style="height: 39px;border:0px;margin: 0px; line-height: 39px; text-align: center; background: #f6f6f6; border-right: 1px solid #e5e5e5; cursor: pointer;">
+                    @{
+                        var stype = ViewData["searchType"] as string[];
+                        for (int i = 0; i < stype.Length; i++)
+                        {
+                            if (ViewData["type"].ToString() == stype[i])
+                            {
+                                continue;
+                            }
+
+                            if (i == 0)
+                            {
+                                if (ViewData["type"].ToString() != "")
+                                {
+                    <li style="display:block;line-height: 39px;" onclick="searchKeyChange(this)" value="@stype[i]">@stype[i] &nbsp;</li>
+                                    continue;
+                                }
+                    <li style="display:block;line-height: 39px;" onclick="searchKeyChange(this)" value="@stype[i]">@stype[i] &nbsp;</li>
+                            }
+                            else
+                            {
+
+                    <li style="display:none;line-height: 39px;" onclick="searchKeyChange(this)" value="@stype[i]">@stype[i] &nbsp;</li>
+                            }
+                        }
+                    }
+                </ul>
+                <div class="span7"><input id="searchValue" value="@ViewData["initKey"].ToString()" class="input-small" style="border-radius:0px;width: 100%; height: 30px; border: 0px; border-color: #fff; font-size: 20px;margin-bottom:0px;" type="text" placeholder="请输入要搜索的小说" name="searchValue" /></div>
+                <div id="seachBtn" class="span2" style="margin-left:4%;width:20%; height: 39px; float: left; text-align: center; line-height: 39px; color: #777; font-weight: 900; cursor: pointer;background:#F6F6F6;">搜 索</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid" style="clear: both;">
+        <div class="row-fluid">
+            <div class="span4"></div>
+            <div class="span4">
+                <div class="btn-group">
+                    <button id="siteTypeBtn" class="btn">@siteTypes.FirstOrDefault()</button> <button data-toggle="dropdown" class="btn dropdown-toggle"><span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        @foreach (var item in siteTypes)
+                        {
+                        <li>
+                            <a href="javascript:;" onclick="changeNowSiteType(this)">@item</a>
+                        </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="span4"></div>
+        </div>
+    </div>
+    <div class="container" style="margin-top:50px;width:80%">
+        <div class="row-fluid">
+            <div class="span12">
+                <ul id="pageContainer" class="thumbnails"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <ul class="pager">
+                <li><button class="btn btn-large" type="button" onclick="topPage()">上一页</button></li>
+                <li><button class="btn btn-large" type="button" onclick="downPage()">下一页</button></li>
+            </ul>
+        </div>
+    </div>
+}

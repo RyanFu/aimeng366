@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@(string.IsNullOrEmpty(ViewBag.Title) ? "艾梦366" : ViewBag.Title)</title>
+    <link rel="icon" href="/resource/images/sys/favicon.ico" mce_href="/resource/images/sys/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/resource/images/sys/favicon.ico" mce_href="/resource/images/sys/favicon.ico" type="image/x-icon">
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/Scripts/bootstrap2.3/css/bootstrap.css" rel="stylesheet" />
+
+    <!--百度验证代码-->
+    <meta name="baidu-site-verification" content="LzLeahFO3l" />
+    <meta name="baidu-site-verification" content="lPaYz2e1Xi" />
+
+    @RenderSection("head", required: false)
+    <!-- 代码 开始 -->
+    <script type="text/javascript">
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() >= 100) { //向下滚动像素大于这个值时，即出现小火箭~
+                    $('.actGotop').fadeIn(300); //火箭淡入的时间，越小出现的越快~
+                } else {
+                    $('.actGotop').fadeOut(300); //火箭淡出的时间，越小消失的越快~
+                }
+            });
+        });
+        function toTop() {
+            $('html,body').animate({ scrollTop: '0px' }, 500);
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="/" class="brand">艾梦366</a>
+                <div class="nav-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="/search/index">主页</a>
+                        </li>
+                        <li>
+                            <a href="/Products/Products">手机版/电脑版</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                @if (UserType == Db.DbModel.UserType.everyOne)
+                {
+                    <a class="pull-right navbar-link" style="line-height: 40px; margin-right:30px;" href="/home/register">注册</a>
+                    <a class="pull-right navbar-link" style="line-height: 40px; margin-right:10px;" href="/home/login">登陆</a>
+                }
+                else
+                {
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">@((User.UserName == null || User.UserName == "") ? User.UserCode : User.UserName)<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/search/UserResourceDetail" target="_blank">个人中心</a></li>
+                                <li><a href="/home/LoginOut">退出</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="actGotop" style="z-index:1000"><a href="javascript:toTop();" title="返回顶部"></a></div>
+    @RenderSection("body", required: false)
+    <footer id="footer" class="footerClass" style="width: 100%;height: 80px;margin-top: 50px;">
+        <p style="height: 50px;margin: 0px auto;text-align: center;border-bottom: 1px solid #CCC;width: 940px;">
+            艾梦366网络资源闹钟  所有内容均来自网络  如果侵犯了您的版权，请您联系我们
+            <script type="text/javascript">
+                var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fedbaf6586b1452bb4c65a9f9f93d7478' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+        </p>
+    </footer>
+    <script src="~/Scripts/bootstrap2.3/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/index.js"></script>
+</body>
+</html>

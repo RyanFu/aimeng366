@@ -1,0 +1,10 @@
+E:\aimeng366\SqliteORM\bin\Release\SqliteORM.dll
+E:\aimeng366\SqliteORM\bin\Release\System.Data.DataSetExtensions.dll
+E:\aimeng366\SqliteORM\bin\Release\System.Data.dll
+E:\aimeng366\SqliteORM\bin\Release\System.Data.SQLite.dll
+E:\aimeng366\SqliteORM\obj\Release\SqliteORM.dll
+C:\Users\鸿神\Desktop\c#\aimeng366\SqliteORM\bin\Release\SqliteORM.dll
+C:\Users\鸿神\Desktop\c#\aimeng366\SqliteORM\bin\Release\System.Data.DataSetExtensions.dll
+C:\Users\鸿神\Desktop\c#\aimeng366\SqliteORM\bin\Release\System.Data.dll
+C:\Users\鸿神\Desktop\c#\aimeng366\SqliteORM\bin\Release\System.Data.SQLite.dll
+C:\Users\鸿神\Desktop\c#\aimeng366\SqliteORM\obj\Release\SqliteORM.dll

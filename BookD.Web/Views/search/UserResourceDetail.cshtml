@@ -1,0 +1,65 @@
+﻿@{
+    //用户订阅资源详情
+    ViewBag.Title = "订阅中心";
+    Layout = "~/Views/Shared/AllHasSearchBox.cshtml";
+}
+
+@section head
+{
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <a href="~/Views/search/index.cshtml">~/Views/search/index.cshtml</a>
+
+}
+@section body
+{
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span12">
+                <h3>
+                    已经订阅列表
+                </h3>
+            </div>
+            @{
+                var rst = ViewData["books"] as List<Db.EF.DbModel.Book>;
+
+                if (rst != null && rst.Count() > 0)
+                {
+                    foreach (var item in rst)
+                    {
+                        <li class="span12" style="margin-left: 0px;">
+                            <div class="thumbnail span12">
+                                <div class="caption">
+                                    <a target="_blank" href="/home/ShowUrl/?url=@MyCodeUrl(item.ResourceIndex.Url)"><img class="span2 img-rounded" alt="@item.ResourceIndex.Name" src="@item.ImgUrl" /></a>
+                                    <div class="span10">
+                                        <div class="row-fluid">
+                                            <h3 class="span3">
+                                                <a href="/home/ShowUrl/?url=@MyCodeUrl(item.ResourceIndex.Url)" target="_blank">@item.ResourceIndex.Name</a>
+                                            </h3>
+                                            <p class="span3 center-block" style="line-height:50px;">
+                                                作者：@item.AuthorName
+                                            </p>
+                                        </div>
+                                        <div class="row-fluid">
+                                            <p>
+                                                @item.Description
+                                            </p>
+                                        </div>
+                                        <div class="row-fluid">
+                                            <p>
+                                                最新章节：<a target="_blank" href="/home/ShowUrl/?url=@MyCodeUrl(item.LastChapterUrl)">@item.LastChapter</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    }
+                }
+                else
+                {
+                    <div class="alert alert-warning" role="alert">没有订阅信息！</div>
+                }
+            }
+        </div>
+    </div>
+}

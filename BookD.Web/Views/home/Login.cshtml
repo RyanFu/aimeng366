@@ -1,0 +1,150 @@
+﻿@{
+    ViewBag.Title = "登陆";
+    Layout = "~/Views/Shared/all.cshtml";
+}
+@section head
+{
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /*background: #444 url(http://sandbox.runjs.cn/uploads/rs/418/nkls38xx/carbon_fibre_big.png);*/
+            font-family: "宋体";
+        }
+
+        .loginBox {
+            width: 420px;
+            height: 230px;
+            padding: 0 20px;
+            border: 1px solid #fff;
+            color: #000;
+            margin-top: 40px;
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 0 15px #222;
+            background: -moz-linear-gradient(top, #fff, #efefef 8%);
+            background: -webkit-gradient(linear, 0 0, 0 100%, from(#f6f6f6), to(#f4f4f4));
+            font: 11px/1.5em 'Microsoft YaHei';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -210px;
+            margin-top: -115px;
+        }
+
+            .loginBox h2 {
+                height: 45px;
+                font-size: 20px;
+                font-weight: normal;
+            }
+
+            .loginBox .left {
+                border-right: 1px solid #ccc;
+                height: 100%;
+                padding-right: 20px;
+            }
+
+        .regBtn {
+            margin-top: 21px;
+        }
+    </style>
+
+    <script>
+        var isVer = false;
+        var loginRefer = "@(Request.UrlReferrer!=null?Request.UrlReferrer.ToString():"/")";
+        $(function () {
+            $("#userLogin").validate({
+                rules: {
+                    username: {
+                        required: true,
+                        minlength: 1,
+                        maxlength: 20
+                    },
+                    password: {
+                        required: true,
+                        minlength: 6,
+                        maxlength: 20
+                    }
+                },
+                messages: {
+                    username: {
+                        required: "请输入帐号！",
+                        minlength: "请输入帐号！",
+                        maxlength: "请输入帐号不能超过20！"
+                    },
+                    password: {
+                        required: "请输入密码",
+                        minlength: "密码最少也要6位嘛，不然号给人盗了！",
+                        maxlength: "密码这么长您记得住么，最长20就够了！"
+                    }
+                },
+                errorPlacement: function (error, element) {
+                    var id = $(element).attr("id");
+                    var infoobj = $("#" + id + "info");
+                    infoobj.html(error);
+                    infoobj.css("color", "red");
+                }
+            });
+        });
+        function submit() {
+            if ($("#userLogin").valid()) {
+                if (isVer) {
+                    if ($("#verCode").val() == "" || $("#verCode").val() == undefined) {
+                        $("#verCode").attr("placeholder", "请输入验证码");
+                        return;
+                    }
+                }
+            }
+            $("#userLogin").ajaxSubmit();
+        }
+        var verCodeUrl = "/home/GetVerCode?verName=@(BookD.Core.SessionName.BookDLogin.ToString())";
+        function showVerCode() {
+            $("#verCodeP").css("display", "block");
+            $("#imgVer").attr("src", verCodeUrl);
+            $(".loginBox").css("height", "270px");
+        }
+    </script>
+    @if (Session[BookD.Core.SessionName.BookDLogin] != null)
+    {
+        <script>
+            $(function () {
+                showVerCode();
+            });
+        </script>
+    }
+}
+@section body
+{
+    <div id="mybox" class="container">
+        <script>
+            $("#mybox").css("height",this.window.innerHeight);
+        </script>
+        <section class="loginBox row-fluid">
+            <section class="span7 left">
+                <form id="userLogin" method="post" target="iMsg">
+                    <h2>用户登录</h2>
+                    <p><input id="username" type="text" name="username" placeholder="用户名" /></p>
+                    <p><input id="password" type="password" name="password" placeholder="密码" /></p>
+                    <p id="verCodeP" style="display:none;"><input id="verCode" style=" width: 127px;" type="text" name="verCode" placeholder="验证码" /><img id="imgVer" style="margin-left: 10px;cursor: pointer; vertical-align: middle" id="validateCode" onclick="this.src=this.src+'&1=1'" alt="验证码" /></p>
+                    <section class="row-fluid">
+                        <section class="span1"><input type="button" onclick="submit()" value=" 登录 " class="btn btn-primary"></section>
+                    </section>
+                </form>
+            </section>
+            <section class="span5 right">
+                <h2>没有帐户？</h2>
+                <section>
+                    <p>注册账号后，您关注的小说更新信息我们讲及时通过手机端和电脑端通知您！</p>
+                    <p><a class="btn regBtn" href="/home/register"> 注册 </a></p>
+                </section>
+            </section>
+        </section>
+    </div>
+
+<iframe id="iMsg" name="iMsg" style="display:none;"></iframe>
+}

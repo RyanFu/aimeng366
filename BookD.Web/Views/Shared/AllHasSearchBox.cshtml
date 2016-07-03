@@ -1,0 +1,194 @@
+﻿@{
+    var siteTypes = Enum.GetNames(typeof(Db.EF.DbModel.ResourceFromSite));
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@(string.IsNullOrEmpty(ViewBag.Title) ? "艾梦366" : ViewBag.Title)</title>
+    <link rel="icon" href="/resource/images/sys/favicon.ico" mce_href="/resource/images/sys/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/resource/images/sys/favicon.ico" mce_href="/resource/images/sys/favicon.ico" type="image/x-icon">
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/Scripts/bootstrap2.3/css/bootstrap.css" rel="stylesheet" />
+    @RenderSection("head", required: false)
+    <!-- 代码 开始 -->
+    <script type="text/javascript">
+        $(function () {
+            $(window).scroll(function () {
+                if ($(window).scrollTop() >= 100) { //向下滚动像素大于这个值时，即出现小火箭~
+                    $('.actGotop').fadeIn(300); //火箭淡入的时间，越小出现的越快~
+                } else {
+                    $('.actGotop').fadeOut(300); //火箭淡出的时间，越小消失的越快~
+                }
+            });
+        });
+        function toTop() {
+            $('html,body').animate({ scrollTop: '0px' }, 500);
+        }
+    </script>
+    <script>
+        var isLoad = false;
+        var nowSiteName = "@Db.EF.DbModel.ResourceFromSite.起点.ToString()";
+
+        $(function () {
+            $("#seachBtn").mouseover(function () {
+                $(this).css("background", "#fff");
+            });
+
+            $("#seachBtn").mouseleave(function () {
+                $(this).css("background", "#F6F6F6");
+            });
+
+            $('#seachBtn').click(function () {
+                Search();
+            });
+            $("#searchValue").focus(function () {
+                canSearch = true;
+            });
+            $("#searchValue").blur(function () {
+                canSearch = false;
+            });
+            document.onkeydown = function (event) {
+                var e = event || window.event || arguments.callee.caller.arguments[0];
+                if (e && e.keyCode == 13) {
+                    Search();
+                }
+            };
+        });
+        function Search() {
+            var keys = $("#searchKey").children();
+            var _index = 0;
+            keys.each(function (index, o) {
+                if ($(o).is(":visible")) {
+                    _index = index;
+                }
+            });
+            window.open("/search/index?initKey=" + $("#searchValue").val() + "&type=" + $(keys[_index]).attr("value") + "&siteType=" + nowSiteName);
+        }
+        function searchKeyChange(obj) {
+            var keys = $("#searchKey").children();
+            var _index = 0;
+            keys.each(function (index, o) {
+                if ($(o).is(":visible")) {
+                    _index = index;
+                }
+                $(o).hide();
+            });
+            if (keys[_index + 1] == undefined) {
+                $(keys[0]).show();
+            } else {
+                $(keys[_index + 1]).show();
+            }
+        }
+
+        function changeNowSiteType(obj) {
+            var rst = $(obj).html();
+            nowSiteName = rst;
+            $("#siteTypeBtn").html(rst);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="/" class="brand">艾梦366</a>
+                <div class="nav-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="/search/index">主页</a>
+                        </li>
+                        <li>
+                            <a href="/Products/Products">手机版/电脑版</a>
+                        </li>
+                    </ul>
+                </div>
+
+
+                @if (UserType == Db.DbModel.UserType.everyOne)
+                {
+                    <a class="pull-right navbar-link" style="line-height: 40px; margin-right:30px;" href="/home/register">注册</a>
+                    <a class="pull-right navbar-link" style="line-height: 40px; margin-right:10px;" href="/home/login">登陆</a>
+                }
+                else
+                {
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="javascript:void(0)">@((User.UserName == null || User.UserName == "") ? User.UserCode : User.UserName)<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/search/UserResourceDetail" target="_blank">个人中心</a></li>
+                                <li><a href="/home/LoginOut">退出</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="actGotop" style="z-index:1000"><a href="javascript:toTop();" title="返回顶部"></a></div>
+
+
+    <header class="container-fluid">
+        <div id="logAndSeach" class="row-fluid" style="margin-top:130px">
+            <div class="span1"></div>
+            <a class="span2" href="/"><img id="log_img" src="~/resource/images/sys/log.png"></a>
+            <div class="span7" style="background:#E6e6e6;padding:3px;">
+                <ul id="searchKey" class="span2" style="height: 39px;border:0px;margin: 0px; line-height: 39px; text-align: center; background: #f6f6f6; border-right: 1px solid #e5e5e5; cursor: pointer;">
+                    @{
+                        var stype = Enum.GetNames(typeof(BookD.Core.BookSearchType));
+                        for (int i = 0; i < stype.Length; i++)
+                        {
+
+                            if (i == 0)
+                            {
+                                <li style="display:block;line-height: 39px;" onclick="searchKeyChange(this)" value="@stype[i]">@stype[i] &nbsp;</li>
+                            }
+                            else
+                            {
+
+                                <li style="display:none;line-height: 39px;" onclick="searchKeyChange(this)" value="@stype[i]">@stype[i] &nbsp;</li>
+                            }
+                        }
+                    }
+                </ul>
+                <div class="span7"><input id="searchValue" class="input-small" style="border-radius:0px;width: 100%; height: 30px; border: 0px; border-color: #fff; font-size: 20px;margin-bottom:0px;" type="text" placeholder="请输入要搜索的小说" name="searchValue" /></div>
+                <div id="seachBtn" class="span2" style="margin-left:4%;width:20%; height: 39px; float: left; text-align: center; line-height: 39px; color: #777; font-weight: 900; cursor: pointer;background:#F6F6F6;">搜 索</div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container-fluid" style="clear: both;">
+        <div class="row-fluid">
+            <div class="span4"></div>
+            <div class="span4">
+                <div class="btn-group">
+                    <button id="siteTypeBtn" class="btn">@siteTypes.FirstOrDefault()</button> <button data-toggle="dropdown" class="btn dropdown-toggle"><span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        @foreach (var item in siteTypes)
+                        {
+                            <li>
+                                <a href="javascript:;" onclick="changeNowSiteType(this)">@item</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            <div class="span4"></div>
+        </div>
+    </div>
+    @RenderSection("body", required: false)
+    <footer id="footer" class="footerClass" style="width: 100%;height: 80px;margin-top: 50px;">
+        <p style="height: 50px;margin: 0px auto;text-align: center;border-bottom: 1px solid #CCC;width: 940px;">
+            艾梦366网络资源闹钟  所有内容均来自网络  如果侵犯了您的版权，请您联系我们
+            <script type="text/javascript">
+                var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fedbaf6586b1452bb4c65a9f9f93d7478' type='text/javascript'%3E%3C/script%3E"));
+            </script>
+        </p>
+    </footer>
+    <script src="~/Scripts/bootstrap2.3/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/index.js"></script>
+</body>
+</html>
