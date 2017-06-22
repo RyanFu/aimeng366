@@ -3,11 +3,11 @@ using SqliteORM;
 
 namespace wpfClient.Model
 {
-	[Table]
+    [Table]
     public class BookMessage : TableBase<BookMessage>
-	{
-		[PrimaryKey(true)]
-		public long Id { get; set; }
+    {
+        [PrimaryKey(true)]
+        public long Id { get; set; }
         [Field]
         public string Name { get; set; }
         [Field]
@@ -26,5 +26,5 @@ namespace wpfClient.Model
         public bool IsRead { get; set; }
         [Field]
         public DateTime CreateOn { get; set; }
-	}
+    }
 }

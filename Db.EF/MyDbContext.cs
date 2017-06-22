@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Db.EF
 {
-    [DbConfigurationType(typeof(MySqlEFConfiguration))]
+    //[DbConfigurationType(typeof(MySqlEFConfiguration))]
     public class MyDbContext : DbContext
     {
         static bool isInit;

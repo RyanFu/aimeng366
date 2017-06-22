@@ -22,3 +22,4 @@ E:\aimeng366\AutoUpdater\obj\x86\Debug\AutoUpdater.exe.manifest
 E:\aimeng366\AutoUpdater\obj\x86\Debug\AutoUpdater.application
 E:\aimeng366\AutoUpdater\obj\x86\Debug\AutoUpdater.exe
 E:\aimeng366\AutoUpdater\obj\x86\Debug\AutoUpdater.pdb
+E:\aimeng366\AutoUpdater\obj\x86\Debug\AutoUpdater.csprojResolveAssemblyReference.cache

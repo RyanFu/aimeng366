@@ -1,0 +1,9 @@
+E:\sources\NewChinaDoc\Quick.Framework.Tool\bin\Release\Quick.Framework.Tool.dll
+E:\sources\NewChinaDoc\Quick.Framework.Tool\bin\Release\Quick.Framework.Tool.pdb
+E:\sources\NewChinaDoc\Quick.Framework.Tool\bin\Release\Newtonsoft.Json.dll
+E:\sources\NewChinaDoc\Quick.Framework.Tool\bin\Release\Quick.Framework.Common.dll
+E:\sources\NewChinaDoc\Quick.Framework.Tool\bin\Release\Quick.Framework.Common.pdb
+E:\sources\NewChinaDoc\Quick.Framework.Tool\bin\Release\Newtonsoft.Json.xml
+E:\sources\NewChinaDoc\Quick.Framework.Tool\obj\Release\Quick.Framework.Tool.csprojResolveAssemblyReference.cache
+E:\sources\NewChinaDoc\Quick.Framework.Tool\obj\Release\Quick.Framework.Tool.dll
+E:\sources\NewChinaDoc\Quick.Framework.Tool\obj\Release\Quick.Framework.Tool.pdb

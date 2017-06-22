@@ -1,17 +1,8 @@
 E:\aimeng366\wpfClient.Model\bin\Release\wpfClient.Model.dll
 E:\aimeng366\wpfClient.Model\bin\Release\All.Core.dll
 E:\aimeng366\wpfClient.Model\bin\Release\SqliteORM.dll
-E:\aimeng366\wpfClient.Model\bin\Release\System.Web.Http.dll
-E:\aimeng366\wpfClient.Model\bin\Release\System.Net.Http.dll
 E:\aimeng366\wpfClient.Model\bin\Release\System.Data.SQLite.dll
-E:\aimeng366\wpfClient.Model\bin\Release\System.Net.Http.Formatting.dll
 E:\aimeng366\wpfClient.Model\bin\Release\Newtonsoft.Json.dll
-E:\aimeng366\wpfClient.Model\bin\Release\System.Web.Http.xml
-E:\aimeng366\wpfClient.Model\bin\Release\System.Net.Http.xml
-E:\aimeng366\wpfClient.Model\bin\Release\System.Net.Http.Formatting.xml
-E:\aimeng366\wpfClient.Model\bin\Release\zh-Hans\System.Web.Http.resources.dll
-E:\aimeng366\wpfClient.Model\bin\Release\zh-Hans\System.Net.Http.resources.dll
-E:\aimeng366\wpfClient.Model\bin\Release\zh-Hans\System.Net.Http.Formatting.resources.dll
 E:\aimeng366\wpfClient.Model\obj\Release\wpfClient.Model.csprojResolveAssemblyReference.cache
 E:\aimeng366\wpfClient.Model\obj\Release\wpfClient.Model.dll
 C:\Users\鸿神\Desktop\c#\aimeng366\wpfClient.Model\bin\Release\wpfClient.Model.dll

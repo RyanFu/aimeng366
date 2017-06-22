@@ -41,3 +41,4 @@ H:\源码\net\aimeng366\All.Helper\obj\Debug\All.Helper.csproj.App.config
 H:\源码\net\aimeng366\All.Helper\obj\Debug\All.Helper.csprojResolveAssemblyReference.cache
 H:\源码\net\aimeng366\All.Helper\obj\Debug\All.Helper.dll
 H:\源码\net\aimeng366\All.Helper\obj\Debug\All.Helper.pdb
+E:\aimeng366\All.Helper\obj\Debug\All.Helper.csprojResolveAssemblyReference.cache

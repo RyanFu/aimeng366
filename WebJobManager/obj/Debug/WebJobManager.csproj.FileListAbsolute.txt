@@ -13,11 +13,8 @@ E:\aimeng366\WebJobManager\bin\Debug\Db.EF.dll
 E:\aimeng366\WebJobManager\bin\Debug\EntityFramework.dll
 E:\aimeng366\WebJobManager\bin\Debug\EntityFramework.SqlServer.dll
 E:\aimeng366\WebJobManager\bin\Debug\Quartz.dll
-E:\aimeng366\WebJobManager\bin\Debug\System.Web.Http.dll
-E:\aimeng366\WebJobManager\bin\Debug\System.Net.Http.dll
 E:\aimeng366\WebJobManager\bin\Debug\log4net.dll
 E:\aimeng366\WebJobManager\bin\Debug\SgmlReaderDll.dll
-E:\aimeng366\WebJobManager\bin\Debug\System.Net.Http.Formatting.dll
 E:\aimeng366\WebJobManager\bin\Debug\Newtonsoft.Json.dll
 E:\aimeng366\WebJobManager\bin\Debug\All.Core.pdb
 E:\aimeng366\WebJobManager\bin\Debug\All.Helper.pdb
@@ -33,13 +30,7 @@ E:\aimeng366\WebJobManager\bin\Debug\EntityFramework.xml
 E:\aimeng366\WebJobManager\bin\Debug\EntityFramework.SqlServer.xml
 E:\aimeng366\WebJobManager\bin\Debug\Quartz.pdb
 E:\aimeng366\WebJobManager\bin\Debug\Quartz.xml
-E:\aimeng366\WebJobManager\bin\Debug\System.Web.Http.xml
-E:\aimeng366\WebJobManager\bin\Debug\System.Net.Http.xml
 E:\aimeng366\WebJobManager\bin\Debug\log4net.xml
-E:\aimeng366\WebJobManager\bin\Debug\System.Net.Http.Formatting.xml
-E:\aimeng366\WebJobManager\bin\Debug\zh-Hans\System.Web.Http.resources.dll
-E:\aimeng366\WebJobManager\bin\Debug\zh-Hans\System.Net.Http.resources.dll
-E:\aimeng366\WebJobManager\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll
 E:\aimeng366\WebJobManager\obj\Debug\WebJobManager.dll
 E:\aimeng366\WebJobManager\obj\Debug\WebJobManager.pdb
 H:\源码\net\aimeng366\WebJobManager\bin\Debug\WebJobManager.dll.config

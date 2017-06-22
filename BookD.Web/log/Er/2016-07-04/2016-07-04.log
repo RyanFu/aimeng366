@@ -1,0 +1,8 @@
+2016-07-04 10:12:44,161 [47] ERROR ErrorAppender [(null)] - 类名:SearchModelManager 方法名:AddRemindBook 信息:更新条目时出错。有关详细信息，请参阅内部异常。
+
+2016-07-04 10:12:47,388 [33] ERROR ErrorAppender [(null)] - 类名:SearchModelManager 方法名:AddRemindBook 信息:更新条目时出错。有关详细信息，请参阅内部异常。
+
+2016-07-04 10:31:15,916 [57] ERROR ErrorAppender [(null)] - 类名:SearchModelManager 方法名:AddRemindBook 信息:更新条目时出错。有关详细信息，请参阅内部异常。
+
+2016-07-04 10:32:17,083 [63] ERROR ErrorAppender [(null)] - 类名:SearchModelManager 方法名:AddRemindBook 信息:更新条目时出错。有关详细信息，请参阅内部异常。
+

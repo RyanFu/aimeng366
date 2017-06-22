@@ -34,6 +34,24 @@ namespace wpfClient.Manager
             }
         }
 
+        public List<BookMessage> GetByWhere(Where clause = null)
+        {
+            using (TableAdapter<BookMessage> adapter = TableAdapter<BookMessage>.Open())
+            {
+                if (clause == null)
+                {
+                    var data = adapter.Select().OrderByDescending(r => r.CreateOn);
+                    return data.ToList();
+                }
+                else
+                {
+                    var data = adapter.Select().Where(clause).OrderByDescending(r => r.CreateOn);
+                    return data.ToList();
+                }
+
+            }
+        }
+
         public int Count()
         {
             using (TableAdapter<BookMessage> adapter = TableAdapter<BookMessage>.Open())
@@ -55,6 +73,15 @@ namespace wpfClient.Manager
                 var msg = adapter.Select().FirstOrDefault(r => r.Id == msgId);
                 msg.IsRead = state;
                 return adapter.CreateUpdate(msg);
+            }
+        }
+
+        public BookMessage GetByName(string bookName, string AuthorName)
+        {
+            using (TableAdapter<BookMessage> adapter = TableAdapter<BookMessage>.Open())
+            {
+                return adapter.Select().FirstOrDefault(r => r.Name == bookName && r.AuthorName == AuthorName);
+
             }
         }
 

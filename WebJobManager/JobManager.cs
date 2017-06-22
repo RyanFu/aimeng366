@@ -36,7 +36,7 @@ namespace WebJobManager
         {
             var checkJob = new JobDetailImpl("MonitorJob", typeof(QiDianMonitorJob));
             //每隔30分钟检查一次
-            var trigger = SimpleScheduleBuilder.RepeatMinutelyForever(30).Build();
+            var trigger = SimpleScheduleBuilder.RepeatMinutelyForever(1).Build();
             trigger.Key = new TriggerKey("MonitorTrigger");
             _sc.ScheduleJob(checkJob, trigger);
         }

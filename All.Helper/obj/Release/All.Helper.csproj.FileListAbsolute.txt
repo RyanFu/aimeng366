@@ -37,3 +37,4 @@ C:\Users\鸿神\Desktop\c#\aimeng366\All.Helper\bin\Release\System.Threading.Tas
 C:\Users\鸿神\Desktop\c#\aimeng366\All.Helper\obj\Release\All.Helper.csproj.App.config
 C:\Users\鸿神\Desktop\c#\aimeng366\All.Helper\obj\Release\All.Helper.csprojResolveAssemblyReference.cache
 C:\Users\鸿神\Desktop\c#\aimeng366\All.Helper\obj\Release\All.Helper.dll
+E:\aimeng366\All.Helper\obj\Release\All.Helper.csprojResolveAssemblyReference.cache

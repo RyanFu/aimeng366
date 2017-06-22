@@ -8,6 +8,7 @@ namespace ClientWebHelper
     public sealed class AllApiKey
     {
         public const string GetMsg = "Msg/GetMsg";
+        public const string SetMsg = "Msg/SetMsg";
         public const string CheckUpdate = "Update/CheckUpdateWpfClient";
         public const string DownUrl = "Update/DownUpdateWpfClient";
     }

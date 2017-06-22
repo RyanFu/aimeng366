@@ -14,19 +14,7 @@ namespace ClientWebHelper
         {
             Task task = new Task(new Action(() =>
             {
-                RegistryKey key = Registry.ClassesRoot.OpenSubKey("http\\shell\\open\\command", false);
-                String path = key.GetValue("").ToString();
-                if (path.Contains("\""))
-                {
-                    path = path.TrimStart('"');
-                    path = path.Substring(0, path.IndexOf('"'));
-                }
-                key.Close();
-                if (path == "" || path == null)
-                {
-                    path = "iexplore.exe";
-                }
-                Process.Start(path, url); 
+                System.Diagnostics.Process.Start(url); 
             }));
             task.Start();
         }

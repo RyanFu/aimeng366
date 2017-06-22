@@ -6,3 +6,4 @@ E:\aimeng366\SqliteORM\bin\Debug\System.Data.dll
 E:\aimeng366\SqliteORM\bin\Debug\System.Data.SQLite.dll
 E:\aimeng366\SqliteORM\obj\Debug\SqliteORM.dll
 E:\aimeng366\SqliteORM\obj\Debug\SqliteORM.pdb
+E:\aimeng366\SqliteORM\obj\Debug\SqliteORM.csprojResolveAssemblyReference.cache

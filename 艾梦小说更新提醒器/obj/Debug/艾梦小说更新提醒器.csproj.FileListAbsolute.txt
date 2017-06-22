@@ -16,12 +16,9 @@ E:\aimeng366\艾梦小说更新提醒器\bin\Debug\System.Threading.Tasks.dll
 E:\aimeng366\艾梦小说更新提醒器\bin\Debug\System.Windows.Interactivity.dll
 E:\aimeng366\艾梦小说更新提醒器\bin\Debug\wpfClient.Manager.dll
 E:\aimeng366\艾梦小说更新提醒器\bin\Debug\wpfClient.Model.dll
-E:\aimeng366\艾梦小说更新提醒器\bin\Debug\System.Web.Http.dll
-E:\aimeng366\艾梦小说更新提醒器\bin\Debug\System.Net.Http.dll
 E:\aimeng366\艾梦小说更新提醒器\bin\Debug\SgmlReaderDll.dll
 E:\aimeng366\艾梦小说更新提醒器\bin\Debug\Newtonsoft.Json.dll
 E:\aimeng366\艾梦小说更新提醒器\bin\Debug\System.Data.SQLite.dll
-E:\aimeng366\艾梦小说更新提醒器\bin\Debug\System.Net.Http.Formatting.dll
 E:\aimeng366\艾梦小说更新提醒器\bin\Debug\All.Core.pdb
 E:\aimeng366\艾梦小说更新提醒器\bin\Debug\All.Helper.pdb
 E:\aimeng366\艾梦小说更新提醒器\bin\Debug\ClientWebHelper.pdb
@@ -38,13 +35,7 @@ E:\aimeng366\艾梦小说更新提醒器\bin\Debug\Microsoft.Threading.Tasks.Ext
 E:\aimeng366\艾梦小说更新提醒器\bin\Debug\System.IO.xml
 E:\aimeng366\艾梦小说更新提醒器\bin\Debug\System.Runtime.xml
 E:\aimeng366\艾梦小说更新提醒器\bin\Debug\System.Threading.Tasks.xml
-E:\aimeng366\艾梦小说更新提醒器\bin\Debug\System.Web.Http.xml
-E:\aimeng366\艾梦小说更新提醒器\bin\Debug\System.Net.Http.xml
 E:\aimeng366\艾梦小说更新提醒器\bin\Debug\Newtonsoft.Json.xml
-E:\aimeng366\艾梦小说更新提醒器\bin\Debug\System.Net.Http.Formatting.xml
-E:\aimeng366\艾梦小说更新提醒器\bin\Debug\zh-Hans\System.Web.Http.resources.dll
-E:\aimeng366\艾梦小说更新提醒器\bin\Debug\zh-Hans\System.Net.Http.resources.dll
-E:\aimeng366\艾梦小说更新提醒器\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll
 E:\aimeng366\艾梦小说更新提醒器\obj\Debug\艾梦小说更新提醒器.csproj.App.config
 E:\aimeng366\艾梦小说更新提醒器\obj\Debug\艾梦小说更新提醒器.csprojResolveAssemblyReference.cache
 E:\aimeng366\艾梦小说更新提醒器\obj\Debug\CMessageBoxWindow.baml

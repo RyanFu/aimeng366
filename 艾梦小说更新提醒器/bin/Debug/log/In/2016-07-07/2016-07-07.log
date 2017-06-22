@@ -1,0 +1,14 @@
+2016-07-07 12:12:02,537 [DefaultQuartzScheduler_Worker-1] INFO  InfoAppender [(null)] - 请求服务器
+
+2016-07-07 13:00:00,279 [DefaultQuartzScheduler_Worker-1] INFO  InfoAppender [(null)] - 请求服务器
+
+2016-07-07 13:02:00,007 [DefaultQuartzScheduler_Worker-2] INFO  InfoAppender [(null)] - 请求服务器
+
+2016-07-07 13:04:00,010 [DefaultQuartzScheduler_Worker-3] INFO  InfoAppender [(null)] - 请求服务器
+
+2016-07-07 13:06:00,000 [DefaultQuartzScheduler_Worker-4] INFO  InfoAppender [(null)] - 请求服务器
+
+2016-07-07 13:08:00,005 [DefaultQuartzScheduler_Worker-5] INFO  InfoAppender [(null)] - 请求服务器
+
+2016-07-07 13:10:00,012 [DefaultQuartzScheduler_Worker-6] INFO  InfoAppender [(null)] - 请求服务器
+

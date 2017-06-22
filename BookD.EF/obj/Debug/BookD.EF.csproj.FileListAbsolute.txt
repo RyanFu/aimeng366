@@ -9,9 +9,6 @@ E:\aimeng366\BookD.EF\bin\Debug\EntityFramework.SqlServer.dll
 E:\aimeng366\BookD.EF\bin\Debug\MySql.Data.dll
 E:\aimeng366\BookD.EF\bin\Debug\MySql.Data.Entity.EF6.dll
 E:\aimeng366\BookD.EF\bin\Debug\All.Core.dll
-E:\aimeng366\BookD.EF\bin\Debug\System.Web.Http.dll
-E:\aimeng366\BookD.EF\bin\Debug\System.Net.Http.dll
-E:\aimeng366\BookD.EF\bin\Debug\System.Net.Http.Formatting.dll
 E:\aimeng366\BookD.EF\bin\Debug\Newtonsoft.Json.dll
 E:\aimeng366\BookD.EF\bin\Debug\BookD.Model.pdb
 E:\aimeng366\BookD.EF\bin\Debug\Db.DbModel.pdb
@@ -19,14 +16,8 @@ E:\aimeng366\BookD.EF\bin\Debug\Db.EF.pdb
 E:\aimeng366\BookD.EF\bin\Debug\EntityFramework.xml
 E:\aimeng366\BookD.EF\bin\Debug\EntityFramework.SqlServer.xml
 E:\aimeng366\BookD.EF\bin\Debug\All.Core.pdb
-E:\aimeng366\BookD.EF\bin\Debug\System.Web.Http.xml
-E:\aimeng366\BookD.EF\bin\Debug\System.Net.Http.xml
-E:\aimeng366\BookD.EF\bin\Debug\System.Net.Http.Formatting.xml
 E:\aimeng366\BookD.EF\bin\Debug\zh-Hans\EntityFramework.resources.dll
 E:\aimeng366\BookD.EF\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
-E:\aimeng366\BookD.EF\bin\Debug\zh-Hans\System.Web.Http.resources.dll
-E:\aimeng366\BookD.EF\bin\Debug\zh-Hans\System.Net.Http.resources.dll
-E:\aimeng366\BookD.EF\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll
 E:\aimeng366\BookD.EF\obj\Debug\BookD.EF.csprojResolveAssemblyReference.cache
 E:\aimeng366\BookD.EF\obj\Debug\DookD.EF.dll
 E:\aimeng366\BookD.EF\obj\Debug\DookD.EF.pdb

@@ -36,7 +36,6 @@ namespace Db.EF
                 context.Configuration.AutoDetectChangesEnabled = true;
                 context.Configuration.ValidateOnSaveEnabled = true;
             }
-
         }
     }
     /// <summary>

@@ -24,13 +24,10 @@ E:\aimeng366\BookD.Web\bin\MySql.Data.Entity.EF6.dll
 E:\aimeng366\BookD.Web\bin\Newtonsoft.Json.dll
 E:\aimeng366\BookD.Web\bin\System.IO.dll
 E:\aimeng366\BookD.Web\bin\System.Net.Http.dll
-E:\aimeng366\BookD.Web\bin\System.Net.Http.Formatting.dll
 E:\aimeng366\BookD.Web\bin\System.Net.Http.WebRequest.dll
 E:\aimeng366\BookD.Web\bin\System.Runtime.dll
 E:\aimeng366\BookD.Web\bin\System.Threading.Tasks.dll
 E:\aimeng366\BookD.Web\bin\System.Web.Helpers.dll
-E:\aimeng366\BookD.Web\bin\System.Web.Http.dll
-E:\aimeng366\BookD.Web\bin\System.Web.Http.WebHost.dll
 E:\aimeng366\BookD.Web\bin\System.Web.Mvc.dll
 E:\aimeng366\BookD.Web\bin\System.Web.Optimization.dll
 E:\aimeng366\BookD.Web\bin\System.Web.Providers.dll
@@ -66,9 +63,6 @@ E:\aimeng366\BookD.Web\bin\System.Net.Http.WebRequest.xml
 E:\aimeng366\BookD.Web\bin\EntityFramework.xml
 E:\aimeng366\BookD.Web\bin\EntityFramework.SqlServer.xml
 E:\aimeng366\BookD.Web\bin\Newtonsoft.Json.xml
-E:\aimeng366\BookD.Web\bin\System.Net.Http.Formatting.xml
-E:\aimeng366\BookD.Web\bin\System.Web.Http.xml
-E:\aimeng366\BookD.Web\bin\System.Web.Http.WebHost.xml
 E:\aimeng366\BookD.Web\bin\System.Web.Mvc.xml
 E:\aimeng366\BookD.Web\bin\System.Web.Razor.xml
 E:\aimeng366\BookD.Web\bin\System.Web.WebPages.xml
@@ -83,9 +77,6 @@ E:\aimeng366\BookD.Web\bin\zh-Hans\System.Web.Optimization.resources.dll
 E:\aimeng366\BookD.Web\bin\zh-Hans\System.Web.Providers.resources.dll
 E:\aimeng366\BookD.Web\bin\zh-Hans\EntityFramework.resources.dll
 E:\aimeng366\BookD.Web\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
-E:\aimeng366\BookD.Web\bin\zh-Hans\System.Net.Http.Formatting.resources.dll
-E:\aimeng366\BookD.Web\bin\zh-Hans\System.Web.Http.resources.dll
-E:\aimeng366\BookD.Web\bin\zh-Hans\System.Web.Http.WebHost.resources.dll
 E:\aimeng366\BookD.Web\bin\zh-Hans\System.Web.Mvc.resources.dll
 E:\aimeng366\BookD.Web\bin\zh-Hans\System.Web.Razor.resources.dll
 E:\aimeng366\BookD.Web\bin\zh-Hans\System.Web.WebPages.resources.dll

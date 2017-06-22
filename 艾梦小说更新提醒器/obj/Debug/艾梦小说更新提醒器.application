@@ -7,14 +7,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="艾梦小说更新提醒器.exe.manifest" size="23750">
+    <dependentAssembly dependencyType="install" codebase="艾梦小说更新提醒器.exe.manifest" size="22620">
       <assemblyIdentity name="艾梦小说更新提醒器.exe" version="2.2.2.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>qAqs7dvnVKUwPCI8+F5diPnmrfk=</dsig:DigestValue>
+        <dsig:DigestValue>vry7h7yAv1P8BsnejHaf2rcaZrk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

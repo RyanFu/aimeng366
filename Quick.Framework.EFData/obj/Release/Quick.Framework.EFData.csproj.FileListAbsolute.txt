@@ -1,0 +1,16 @@
+E:\sources\NewChinaDoc\Quick.Framework.EFData\bin\Release\Quick.Framework.EFData.dll.config
+E:\sources\NewChinaDoc\Quick.Framework.EFData\bin\Release\Quick.Framework.EFData.dll
+E:\sources\NewChinaDoc\Quick.Framework.EFData\bin\Release\Quick.Framework.EFData.pdb
+E:\sources\NewChinaDoc\Quick.Framework.EFData\bin\Release\EntityFramework.dll
+E:\sources\NewChinaDoc\Quick.Framework.EFData\bin\Release\EntityFramework.SqlServer.dll
+E:\sources\NewChinaDoc\Quick.Framework.EFData\bin\Release\Quick.Framework.Common.dll
+E:\sources\NewChinaDoc\Quick.Framework.EFData\bin\Release\Quick.Framework.Tool.dll
+E:\sources\NewChinaDoc\Quick.Framework.EFData\bin\Release\Newtonsoft.Json.dll
+E:\sources\NewChinaDoc\Quick.Framework.EFData\bin\Release\Quick.Framework.Common.pdb
+E:\sources\NewChinaDoc\Quick.Framework.EFData\bin\Release\Quick.Framework.Tool.pdb
+E:\sources\NewChinaDoc\Quick.Framework.EFData\bin\Release\EntityFramework.xml
+E:\sources\NewChinaDoc\Quick.Framework.EFData\bin\Release\EntityFramework.SqlServer.xml
+E:\sources\NewChinaDoc\Quick.Framework.EFData\bin\Release\Newtonsoft.Json.xml
+E:\sources\NewChinaDoc\Quick.Framework.EFData\obj\Release\Quick.Framework.EFData.csprojResolveAssemblyReference.cache
+E:\sources\NewChinaDoc\Quick.Framework.EFData\obj\Release\Quick.Framework.EFData.dll
+E:\sources\NewChinaDoc\Quick.Framework.EFData\obj\Release\Quick.Framework.EFData.pdb

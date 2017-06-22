@@ -15,11 +15,11 @@ namespace BookD.Web.webapis
     {
         [HttpPost]
         [TokenAuthorize]
-        public SResult<List<object>> GetMsg()
+        public SResult<List<object>, string> GetMsg()
         {
             var userContext = WebRepoFactory.CreateRepo<User>();
             var user = userContext.GetAll().FirstOrDefault(r => r.UserCode == this.Code);
-            var rst = new SResult<List<object>>();
+            var rst = new SResult<List<object>, string>();
             if (user != null)
             {
                 var msgRepo = WebRepoFactory.CreateRepo<BookUserMsg>();
@@ -40,16 +40,33 @@ namespace BookD.Web.webapis
                         Url = r.Book.ResourceIndex.Url,
                         ResourceFromsite = r.Book.ResourceIndex.ResourceFromsite.ToString()
                     }));
-                    //变更阅读状态
-                    foreach (var item in msgs)
-                    {
-                        item.UserMsg.IsRead = true;
-                    }
+                    rst.Resual2 = string.Join(",", msgs.Select(x => x.UserMsgId).ToArray());
                     msgRepo.Save();
                     return rst;
                 }
             }
 
+            rst.RState = RState.OK;
+            return rst;
+        }
+
+
+        [HttpPost]
+        [TokenAuthorize]
+        public SResult<List<object>> SetMsg(Input<string> msgIds)
+        {
+            var userContext = WebRepoFactory.CreateRepo<User>();
+            var user = userContext.GetAll().FirstOrDefault(r => r.UserCode == this.Code);
+            var rst = new SResult<List<object>>();
+            var msgRepo = WebRepoFactory.CreateRepo<BookUserMsg>();
+            var mids = msgIds.InputPara.Split(',').Select(r => Convert.ToInt32(r));
+            var lstMsg = msgRepo.Where(r => mids.Contains(r.UserMsgId)).ToList();
+            //变更阅读状态
+            foreach (var item in lstMsg)
+            {
+                item.UserMsg.IsRead = true;
+            }
+            msgRepo.Save();
             rst.RState = RState.OK;
             return rst;
         }

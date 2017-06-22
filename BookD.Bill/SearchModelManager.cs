@@ -144,7 +144,11 @@ namespace BookD.Bill
                             ResourceId = resourceId,
                             ResourceType = ResourceType.小说,
                             SubscribeNum = 1,
-                            Url = data.BookUrl
+                            Url = data.BookUrl,
+                            CreatedBy = user.UserName,
+                            CreatedOn = DateTime.Now,
+                            ModifiedBy = user.UserName,
+                            ModifiedOn = DateTime.Now,
                         };
                         Repo.Insert(new Book()
                         {

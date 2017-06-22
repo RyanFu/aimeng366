@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{5D93BD1F-211C-4D08-A2D3-FE0BCBCB31C3}"
 EndProject
@@ -52,6 +52,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JPush", "JPush", "{EED1CE79-BCEB-47B4-9D6B-E5306513D544}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cn.jpush.api", "cn.jpush.api\cn.jpush.api.csproj", "{E281D457-F259-4F0B-8608-16C81D8AE97B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF", "EF", "{260ABF3E-D44E-4B0D-80A5-E455E0C74D3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quick.Framework.EFData", "Quick.Framework.EFData\Quick.Framework.EFData.csproj", "{E29F850E-3069-40FC-99AE-9720876B0187}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quick.Framework.Tool", "Quick.Framework.Tool\Quick.Framework.Tool.csproj", "{A9A5CDD3-CA9A-4952-A3DE-0F107BBB826A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -139,6 +145,14 @@ Global
 		{E281D457-F259-4F0B-8608-16C81D8AE97B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E281D457-F259-4F0B-8608-16C81D8AE97B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E281D457-F259-4F0B-8608-16C81D8AE97B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E29F850E-3069-40FC-99AE-9720876B0187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E29F850E-3069-40FC-99AE-9720876B0187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E29F850E-3069-40FC-99AE-9720876B0187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E29F850E-3069-40FC-99AE-9720876B0187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9A5CDD3-CA9A-4952-A3DE-0F107BBB826A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9A5CDD3-CA9A-4952-A3DE-0F107BBB826A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9A5CDD3-CA9A-4952-A3DE-0F107BBB826A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9A5CDD3-CA9A-4952-A3DE-0F107BBB826A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -164,6 +178,9 @@ Global
 		{214EDB7F-1FC3-4F3E-9242-51CE8A0E9A3F} = {C6261077-7EE1-4A10-B293-C55613DF0C96}
 		{5B7AAD6D-5B90-4AE4-9FAE-529E763DAFAD} = {3DB420EE-D9CB-46C1-BE47-8D8C9BA1DB9C}
 		{E281D457-F259-4F0B-8608-16C81D8AE97B} = {EED1CE79-BCEB-47B4-9D6B-E5306513D544}
+		{260ABF3E-D44E-4B0D-80A5-E455E0C74D3C} = {C6261077-7EE1-4A10-B293-C55613DF0C96}
+		{E29F850E-3069-40FC-99AE-9720876B0187} = {260ABF3E-D44E-4B0D-80A5-E455E0C74D3C}
+		{A9A5CDD3-CA9A-4952-A3DE-0F107BBB826A} = {260ABF3E-D44E-4B0D-80A5-E455E0C74D3C}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = DroidClient\DroidClient.csproj

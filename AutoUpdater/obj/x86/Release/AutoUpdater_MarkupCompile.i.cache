@@ -4,7 +4,7 @@
 winexe
 C#
 .cs
-C:\Users\鸿神\Desktop\c#\aimeng366\AutoUpdater\obj\x86\Release\
+E:\aimeng366\AutoUpdater\obj\x86\Release\
 Ezhu.AutoUpdater
 none
 false
@@ -12,9 +12,9 @@ TRACE
 
 52135553556
 
-46-1183555215
+46-835188375
 131071118929
 App.xaml;Theme\Black\Style.xaml;Theme\Black\WindowBaseStyle.xaml;UI\AlertWin.xaml;UI\DownFileProcess.xaml;
 
-False
+True
 
